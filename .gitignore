@@ -1,36 +1,80 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Development
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
+## Config
+**/.config/*.config.*
 
-# testing
-/coverage
+!**/*.config.js
+!**/*.config.*js
 
-# next.js
-/.next/
-/out/
+## Environment
+**/.env.*
+**/*.env
+**/*.env.*
 
-# production
-/build
+!**/.env.default
+!**/default.env
 
-# misc
-.DS_Store
-*.pem
+## IDE
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+### Atom
+**/.atom
 
-# local env files
-.env*.local
+### JetBrains
+**/.idea
 
-# vercel
-.vercel
+**/*.iml
+**/*.ipr
+**/*.iws
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+### Visual Studio Code
+**/.vscode
+
+## Hosting
+
+### Vercel
+**/.vercel
+
+# Languages
+
+## Node.js
+**/.DS_STORE
+**/build
+**/node_modules
+
+**/*.tsbuildinfo
+
+### Dependencies
+**/.pnp
+**/.pnp.*
+
+**/.yarn/install-state.gz
+
+### Frameworks
+
+#### Next.js
+**/.next
+**/out
+
+**/next-env.d.ts
+
+# Misc
+
+## Files
+**/*.db
+
+**/*.lock
+**/*-lock.json
+
+**/*.log
+**/*.log.*
+
+**/*.pem
+
+**/*.gz
+
+**/*.sqlite
+
+**/*.zip
+
+## Testing
+**/coverage

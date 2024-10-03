@@ -1,0 +1,46 @@
+name: node
+
+concurrency:   
+  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  CARGO_TERM_COLOR: always
+
+on:
+  repository_dispatch:
+    types: [ rust ]
+  schedule:
+    - cron: "30 21 * * 0" # Every Sunday at 9:30pm UTC
+  workflow_dispatch:
+
+permissions: read-all
+
+jobs:
+  builder:
+    strategy:
+      matrix:
+        platform: [ ubuntu-latestt ]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - 
+        name: checkout
+        uses: actions/checkout@v4
+      - 
+        name: dependencies
+        run: npm install
+      - 
+        name: build
+        run: npm run build
+      -
+        name: cache
+        uses: actions/cache@v3
+        with:
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: |
+            ~/.npm
+            ~/.cache
+            node_modules
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
