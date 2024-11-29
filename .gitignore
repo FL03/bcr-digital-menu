@@ -1,40 +1,4 @@
-# Development
-
-## Config
-**/.config/*.config.*
-
-!**/*.config.js
-!**/*.config.*js
-
-## Environment
-**/.env.*
-**/*.env
-**/*.env.*
-
-!**/.env.default
-!**/default.env
-
-## IDE
-
-### Atom
-**/.atom
-
-### JetBrains
-**/.idea
-
-**/*.iml
-**/*.ipr
-**/*.iws
-
-### Visual Studio Code
-**/.vscode
-
-## Hosting
-
-### Vercel
-**/.vercel
-
-# Languages
+# Language Specific
 
 ## Node.js
 **/.DS_STORE
@@ -57,9 +21,84 @@
 
 **/next-env.d.ts
 
-# Misc
+### Package Manager
+**/yarn-error.log
 
-## Files
+## Python
+**/__pycache__
+**/.pytest_cache
+**/venv
+
+## Rust
+**/target
+
+**/Cargo.lock
+
+**/*.rs.bk
+**/*.rs.bk.*
+
+# Miscellaneous
+
+## Development
+
+### Configuration
+
+#### Custom Configurations
+**/.config/*.config.*
+
+#### dotenv
+**/.env.*
+**/*.env
+**/*.env.*
+
+!**/.env.default*
+!**/*default.env
+
+!**/*.env.example
+!**/*.env.example.*
+
+!**/*.example.env
+!**/*.example.env.*
+
+### IDE
+
+#### Atom
+**/.atom
+
+#### JetBrains
+**/.idea
+
+**/*.iml
+**/*.ipr
+**/*.iws
+
+#### Visual Studio Code
+**/.vscode
+
+### Integrations
+
+#### Supabase
+**/supabase/temp
+
+#### Vercel
+**/.vercel
+
+## Directories
+**/build
+**/debug
+**/dist
+**/release
+
+### testing
+**/coverage
+
+## File Extensions
+**/*.bak
+**/*.bak.*
+
+**/*.bk
+**/*.bk.*
+
 **/*.db
 
 **/*.lock
@@ -76,5 +115,12 @@
 
 **/*.zip
 
-## Testing
-**/coverage
+## Operating Systems
+
+### NixOs
+!**/flake.lock
+
+### Windows
+
+#### Windows Subsystem for Linux (WSL)
+**/*:Zone.identifier
